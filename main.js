@@ -110,12 +110,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
 /* harmony import */ var _examples_examples_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./examples/examples.component */ "./src/app/examples/examples.component.ts");
 /* harmony import */ var _helper_pipes_pipes_module__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./helper/pipes/pipes.module */ "./src/app/helper/pipes/pipes.module.ts");
+/* harmony import */ var _mypopup_mypopup_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./mypopup/mypopup.component */ "./src/app/mypopup/mypopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -150,7 +152,8 @@ var AppModule = /** @class */ (function () {
                 _bag_image_bag_image_component__WEBPACK_IMPORTED_MODULE_14__["BagImageComponent"],
                 _show_costs_show_costs_component__WEBPACK_IMPORTED_MODULE_15__["ShowCostsComponent"],
                 _examples_examples_component__WEBPACK_IMPORTED_MODULE_17__["ExamplesComponent"],
-                _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"]
+                _login_login_component__WEBPACK_IMPORTED_MODULE_16__["LoginComponent"],
+                _mypopup_mypopup_component__WEBPACK_IMPORTED_MODULE_19__["MypopupComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -171,6 +174,7 @@ var AppModule = /** @class */ (function () {
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]],
+            entryComponents: [_mypopup_mypopup_component__WEBPACK_IMPORTED_MODULE_19__["MypopupComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -238,7 +242,7 @@ var BagImageComponent = /** @class */ (function () {
         this.leftBag = { color: "", material: "", type: "" };
         this.existingMods = { lb: { color: "blue", material: "lether" }, rb: { color: "red", material: "shaumstoff" } };
         this.existingQuery = "";
-        this.myImg = "/assets/img/example.png";
+        this.myImg = "/assets/img/example.jpg";
     }
     BagImageComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -322,15 +326,15 @@ var ExamplesComponent = /** @class */ (function () {
     }
     ExamplesComponent.prototype.ngOnInit = function () {
         this.bags = [
-            { price: 45, title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.png" },
-            { price: 95, title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.png" },
-            { price: 65, title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.png" },
-            { price: 85, title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.png" },
-            { price: 45, title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.png" },
-            { price: 35, title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.png" },
-            { price: 45, title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.png" },
-            { price: 85, title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.png" },
-            { price: 45, title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.png" }
+            { price: 45, title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.jpg" },
+            { price: 95, title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.jpg" },
+            { price: 65, title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.jpg" },
+            { price: 85, title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.jpg" },
+            { price: 45, title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.jpg" },
+            { price: 35, title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.jpg" },
+            { price: 45, title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.jpg" },
+            { price: 85, title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.jpg" },
+            { price: 45, title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.jpg" }
         ];
     };
     ExamplesComponent = __decorate([
@@ -392,12 +396,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material/slide-toggle */ "./node_modules/@angular/material/esm5/slide-toggle.es5.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
 /* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
+/* harmony import */ var _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @angular/material/bottom-sheet */ "./node_modules/@angular/material/esm5/bottom-sheet.es5.js");
+/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/esm5/snack-bar.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -461,7 +469,9 @@ var MatModule = /** @class */ (function () {
                 _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_8__["MatGridListModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatCardModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatBadgeModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatBadgeModule"],
+                _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_21__["MatBottomSheetModule"],
+                _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_22__["MatSnackBarModule"]
             ],
             exports: [
                 _angular_material_button_toggle__WEBPACK_IMPORTED_MODULE_12__["MatButtonToggleModule"],
@@ -492,7 +502,9 @@ var MatModule = /** @class */ (function () {
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSelectModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSortModule"],
                 _angular_material_radio__WEBPACK_IMPORTED_MODULE_3__["MatRadioModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatBadgeModule"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatBadgeModule"],
+                _angular_material_bottom_sheet__WEBPACK_IMPORTED_MODULE_21__["MatBottomSheetModule"],
+                _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_22__["MatSnackBarModule"]
             ],
             declarations: [],
         })
@@ -626,9 +638,9 @@ var HomeComponent = /** @class */ (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.bags = [
-            { title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.png" },
-            { title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.png" },
-            { title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.png" }
+            { title: "The Campus", subtitle: "Great for going to work, university or school", slug: "campus", img: "/assets/img/example.jpg" },
+            { title: "The Bagpacker", subtitle: "Great for hiking, climbing and traveling.", slug: "bagpacker", img: "/assets/img/example.jpg" },
+            { title: "The Daily", subtitle: "Great for shopping, city-visiting and work", slug: "daily", img: "/assets/img/example.jpg" }
         ];
     };
     HomeComponent = __decorate([
@@ -775,7 +787,7 @@ var SELECTED_BAGS = {
 var ModifyBagComponent = /** @class */ (function () {
     function ModifyBagComponent(_route) {
         this._route = _route;
-        this.myImg = "/assets/img/example.png";
+        this.myImg = "/assets/img/example.jpg";
     }
     ModifyBagComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -879,7 +891,7 @@ module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\">\n<img routerLink=\"/\" height=\"100px\" width=\"100px\" src=\"/assets/img/logo_transparent_white.png\">\n\n<div style=\"position:absolute;right:5%\">\n\n\n  <button mat-button>Cart</button>\n\n  <button routerLink=\"examples\" mat-button>Examples</button>\n\n  <button routerLink=\"login\" mat-raised-button>Login</button>\n</div>\n</mat-toolbar>\n<router-outlet></router-outlet>\n"
+module.exports = "<mat-toolbar color=\"primary\">\n<img routerLink=\"/\" height=\"100px\" width=\"100px\" src=\"/assets/img/logo_transparent_white.png\">\n\n<div style=\"position:absolute;right:5%\">\n\n\n  <button mat-button><mat-icon>shopping_cart</mat-icon></button>\n\n  <button routerLink=\"examples\" mat-button>Examples</button>\n\n  <button routerLink=\"login\" mat-raised-button><mat-icon>person</mat-icon>Login</button>\n</div>\n</mat-toolbar>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -922,6 +934,69 @@ var MyNavComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], MyNavComponent);
     return MyNavComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/mypopup/mypopup.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/mypopup/mypopup.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/mypopup/mypopup.component.html":
+/*!************************************************!*\
+  !*** ./src/app/mypopup/mypopup.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h4>Rucksack zum Warenkorb hinzugefügt!</h4>\n"
+
+/***/ }),
+
+/***/ "./src/app/mypopup/mypopup.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/mypopup/mypopup.component.ts ***!
+  \**********************************************/
+/*! exports provided: MypopupComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MypopupComponent", function() { return MypopupComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MypopupComponent = /** @class */ (function () {
+    function MypopupComponent() {
+    }
+    MypopupComponent.prototype.ngOnInit = function () {
+    };
+    MypopupComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-mypopup',
+            template: __webpack_require__(/*! ./mypopup.component.html */ "./src/app/mypopup/mypopup.component.html"),
+            styles: [__webpack_require__(/*! ./mypopup.component.css */ "./src/app/mypopup/mypopup.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MypopupComponent);
+    return MypopupComponent;
 }());
 
 
@@ -1011,7 +1086,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n  <h3>1x{{bag}} <small>60€</small></h3>\n\n\n</div>\n<hr>\n\n<div *ngIf=\"!isEmpty(mods.top_bag)\">\n  <h3>Obere vordere Tasche</h3>\n<div *ngFor=\"let mod of mods.top_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{mod}}<small>10€</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n\n<div *ngIf=\"!isEmpty(mods.bottom_bag)\">\n  <h3>Untere vordere Tasche</h3>\n<div *ngFor=\"let mod of mods.bottom_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{mod}}<small>10€</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n\n<div *ngIf=\"!isEmpty(mods.left_bag)\">\n  <h3>Linke Seitentasche</h3>\n<div *ngFor=\"let mod of mods.left_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{mod}}<small>10€</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n<div *ngIf=\"!isEmpty(mods.right_bag)\">\n  <h3>Rechte Seitentasche</h3>\n<div *ngFor=\"let mod of mods.right_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{mod}}<small>10€</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n<h3>Gesamt: 120€</h3>\n<button mat-raised-button color=\"accent\"><h4>In den Einkaufswagen</h4></button>\n"
+module.exports = "<div>\n  <h3>1x{{bag}} <small>60 €</small></h3>\n\n\n</div>\n<hr>\n\n<div *ngIf=\"!isEmpty(mods.top_bag)\">\n  <h3>Obere vordere Tasche</h3>\n<div *ngFor=\"let mod of mods.top_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{getName(mod)}}<small>{{getPrice(mod)}} €</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n\n<div *ngIf=\"!isEmpty(mods.bottom_bag)\">\n  <h3>Untere vordere Tasche</h3>\n<div *ngFor=\"let mod of mods.bottom_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{getName(mod)}}<small>{{getPrice(mod)}} €</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n\n<div *ngIf=\"!isEmpty(mods.left_bag)\">\n  <h3>Linke Seitentasche</h3>\n<div *ngFor=\"let mod of mods.left_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{getName(mod)}}<small>{{getPrice(mod)}} €</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n<div *ngIf=\"!isEmpty(mods.right_bag)\">\n  <h3>Rechte Seitentasche</h3>\n<div *ngFor=\"let mod of mods.right_bag | values\">\n<div *ngIf=\"mod!=''\">\n  <h4>{{getName(mod)}}<small>{{getPrice(mod)}} €</small></h4>\n</div>\n</div>\n  <hr>\n</div>\n<h3>Gesamt: 120 €</h3>\n<button mat-raised-button (click)=\"openSnackBar()\" color=\"accent\"><h4>In den Einkaufswagen</h4></button>\n\n"
 
 /***/ }),
 
@@ -1027,6 +1102,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShowCostsComponent", function() { return ShowCostsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _mypopup_mypopup_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mypopup/mypopup.component */ "./src/app/mypopup/mypopup.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1036,6 +1113,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 
 var SELECTED_TYPES = {
@@ -1049,9 +1128,32 @@ var SELECTED_BAGS = {
     daily: "The Daily",
     bagpacker: "The Bagpacker",
 };
+var SELECTED_COSTS = [
+    { name: "Handy-Fach", value: "handy_bag", price: "5" },
+    { name: "Brillen-Fach", value: "glasses_bag", price: "15" },
+    { name: "Stifte-Fach", value: "drink", price: "15" },
+    { name: "Muster 1", value: "muster1", price: "20" },
+    { name: "Muster 2", value: "muster2", price: "15" },
+    { name: "Muster 3", value: "muster3", price: "10" },
+    { name: "Kleine Tasche", value: "small_bag", price: "5" },
+    { name: "Große Tasche", value: "big_bag", price: "10" },
+    { name: "Trinkflasche", value: "drink", price: "15" },
+    { name: "Netzfach", value: "net", price: "5" },
+    { name: "Blau", value: "blue", price: "5" },
+    { name: "Rot", value: "red", price: "5" },
+    { name: "Grün", value: "green", price: "5" },
+    { name: "Gelb", value: "yellow", price: "5" },
+    { name: "Leder", value: "lether", price: "20" },
+    { name: "Stoff", value: "stuff", price: "15" },
+    { name: "Wolle", value: "wolle", price: "20" },
+    { name: "Weichplastik", value: "plastik", price: "10" },
+    { name: "Arial", value: "arial", price: "0" },
+    { name: "New Times Roman", value: "new_times_roman", price: "0" },
+];
 var ShowCostsComponent = /** @class */ (function () {
-    function ShowCostsComponent(_route) {
+    function ShowCostsComponent(_route, snackBar) {
         this._route = _route;
+        this.snackBar = snackBar;
         this.mods = {
             left_bag: { gadget: "", color: "", material: "", letter: "", closing: "" },
             right_bag: { gadget: "", color: "", material: "", letter: "", closing: "" },
@@ -1095,13 +1197,36 @@ var ShowCostsComponent = /** @class */ (function () {
         }
         return true;
     };
+    ShowCostsComponent.prototype.getName = function (urlName) {
+        var myname = "";
+        SELECTED_COSTS.map(function (element) {
+            if (element.value == urlName) {
+                myname = element.name;
+            }
+        });
+        return myname;
+    };
+    ShowCostsComponent.prototype.getPrice = function (urlName) {
+        var myprice = "";
+        SELECTED_COSTS.map(function (element) {
+            if (element.value == urlName) {
+                myprice = element.price;
+            }
+        });
+        return myprice;
+    };
+    ShowCostsComponent.prototype.openSnackBar = function () {
+        this.snackBar.openFromComponent(_mypopup_mypopup_component__WEBPACK_IMPORTED_MODULE_3__["MypopupComponent"], {
+            duration: 2000,
+        });
+    };
     ShowCostsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-show-costs',
             template: __webpack_require__(/*! ./show-costs.component.html */ "./src/app/show-costs/show-costs.component.html"),
             styles: [__webpack_require__(/*! ./show-costs.component.css */ "./src/app/show-costs/show-costs.component.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"], _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"]])
     ], ShowCostsComponent);
     return ShowCostsComponent;
 }());
@@ -1218,8 +1343,8 @@ var SELECTED_RADIO = {
             { name: "Handy-Fach", value: "handy_bag" },
             { name: "Brillen-Fach", value: "glasses_bag" },
             { name: "Stifte-Fach", value: "drink" },
-            { name: "Kleines Fach", value: "net" },
-            { name: "Großes Fach", value: "net" }
+            { name: "Kleines Fach", value: "small_bag" },
+            { name: "Großes Fach", value: "big_bag" }
         ],
         color: [
             { name: "Blau", value: "blue" },
